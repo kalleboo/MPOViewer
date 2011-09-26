@@ -1,0 +1,290 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		12AE2B2E14301E6A0028F001 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12AE2B2D14301E6A0028F001 /* Cocoa.framework */; };
+		12AE2B3814301E6A0028F001 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 12AE2B3614301E6A0028F001 /* InfoPlist.strings */; };
+		12AE2B3A14301E6B0028F001 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 12AE2B3914301E6B0028F001 /* main.m */; };
+		12AE2B3E14301E6B0028F001 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 12AE2B3C14301E6B0028F001 /* Credits.rtf */; };
+		12AE2B4114301E6B0028F001 /* MPOViewerAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 12AE2B4014301E6B0028F001 /* MPOViewerAppDelegate.m */; };
+		12AE2B4414301E6B0028F001 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 12AE2B4214301E6B0028F001 /* MainMenu.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		12AE2B2914301E6A0028F001 /* MPOViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MPOViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		12AE2B2D14301E6A0028F001 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		12AE2B3014301E6A0028F001 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		12AE2B3114301E6A0028F001 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		12AE2B3214301E6A0028F001 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		12AE2B3514301E6A0028F001 /* MPOViewer-Info.plist */ = {isa = PBXFileReference; path = "MPOViewer-Info.plist"; sourceTree = "<group>"; };
+		12AE2B3714301E6A0028F001 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		12AE2B3914301E6B0028F001 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		12AE2B3B14301E6B0028F001 /* MPOViewer-Prefix.pch */ = {isa = PBXFileReference; path = "MPOViewer-Prefix.pch"; sourceTree = "<group>"; };
+		12AE2B3D14301E6B0028F001 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		12AE2B3F14301E6B0028F001 /* MPOViewerAppDelegate.h */ = {isa = PBXFileReference; path = MPOViewerAppDelegate.h; sourceTree = "<group>"; };
+		12AE2B4014301E6B0028F001 /* MPOViewerAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPOViewerAppDelegate.m; sourceTree = "<group>"; };
+		12AE2B4314301E6B0028F001 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		12AE2B2614301E6A0028F001 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				12AE2B2E14301E6A0028F001 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		12AE2B1E14301E6A0028F001 = {
+			isa = PBXGroup;
+			children = (
+				12AE2B3314301E6A0028F001 /* MPOViewer */,
+				12AE2B2C14301E6A0028F001 /* Frameworks */,
+				12AE2B2A14301E6A0028F001 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		12AE2B2A14301E6A0028F001 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				12AE2B2914301E6A0028F001 /* MPOViewer.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		12AE2B2C14301E6A0028F001 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				12AE2B2D14301E6A0028F001 /* Cocoa.framework */,
+				12AE2B2F14301E6A0028F001 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		12AE2B2F14301E6A0028F001 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				12AE2B3014301E6A0028F001 /* AppKit.framework */,
+				12AE2B3114301E6A0028F001 /* CoreData.framework */,
+				12AE2B3214301E6A0028F001 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		12AE2B3314301E6A0028F001 /* MPOViewer */ = {
+			isa = PBXGroup;
+			children = (
+				12AE2B3F14301E6B0028F001 /* MPOViewerAppDelegate.h */,
+				12AE2B4014301E6B0028F001 /* MPOViewerAppDelegate.m */,
+				12AE2B4214301E6B0028F001 /* MainMenu.xib */,
+				12AE2B3414301E6A0028F001 /* Supporting Files */,
+			);
+			path = MPOViewer;
+			sourceTree = "<group>";
+		};
+		12AE2B3414301E6A0028F001 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				12AE2B3514301E6A0028F001 /* MPOViewer-Info.plist */,
+				12AE2B3614301E6A0028F001 /* InfoPlist.strings */,
+				12AE2B3914301E6B0028F001 /* main.m */,
+				12AE2B3B14301E6B0028F001 /* MPOViewer-Prefix.pch */,
+				12AE2B3C14301E6B0028F001 /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		12AE2B2814301E6A0028F001 /* MPOViewer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 12AE2B4714301E6B0028F001 /* Build configuration list for PBXNativeTarget "MPOViewer" */;
+			buildPhases = (
+				12AE2B2514301E6A0028F001 /* Sources */,
+				12AE2B2614301E6A0028F001 /* Frameworks */,
+				12AE2B2714301E6A0028F001 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MPOViewer;
+			productName = MPOViewer;
+			productReference = 12AE2B2914301E6A0028F001 /* MPOViewer.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		12AE2B2014301E6A0028F001 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 12AE2B2314301E6A0028F001 /* Build configuration list for PBXProject "MPOViewer" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 12AE2B1E14301E6A0028F001;
+			productRefGroup = 12AE2B2A14301E6A0028F001 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				12AE2B2814301E6A0028F001 /* MPOViewer */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		12AE2B2714301E6A0028F001 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				12AE2B3814301E6A0028F001 /* InfoPlist.strings in Resources */,
+				12AE2B3E14301E6B0028F001 /* Credits.rtf in Resources */,
+				12AE2B4414301E6B0028F001 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		12AE2B2514301E6A0028F001 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				12AE2B3A14301E6B0028F001 /* main.m in Sources */,
+				12AE2B4114301E6B0028F001 /* MPOViewerAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		12AE2B3614301E6A0028F001 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				12AE2B3714301E6A0028F001 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		12AE2B3C14301E6B0028F001 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				12AE2B3D14301E6B0028F001 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		12AE2B4214301E6B0028F001 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				12AE2B4314301E6B0028F001 /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		12AE2B4514301E6B0028F001 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		12AE2B4614301E6B0028F001 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		12AE2B4814301E6B0028F001 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MPOViewer/MPOViewer-Prefix.pch";
+				INFOPLIST_FILE = "MPOViewer/MPOViewer-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		12AE2B4914301E6B0028F001 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MPOViewer/MPOViewer-Prefix.pch";
+				INFOPLIST_FILE = "MPOViewer/MPOViewer-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		12AE2B2314301E6A0028F001 /* Build configuration list for PBXProject "MPOViewer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				12AE2B4514301E6B0028F001 /* Debug */,
+				12AE2B4614301E6B0028F001 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		12AE2B4714301E6B0028F001 /* Build configuration list for PBXNativeTarget "MPOViewer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				12AE2B4814301E6B0028F001 /* Debug */,
+				12AE2B4914301E6B0028F001 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 12AE2B2014301E6A0028F001 /* Project object */;
+}
