@@ -7,11 +7,16 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "MPOView.h"
 
 @interface MPOViewerAppDelegate : NSObject <NSApplicationDelegate> {
     NSWindow *window;
+    MPOView* view1;
+    MPOView* view2;
 }
 
 @property (assign) IBOutlet NSWindow *window;
+@property (nonatomic,retain) IBOutlet MPOView* view1;
+@property (nonatomic,retain) IBOutlet MPOView* view2;
 
 @end
