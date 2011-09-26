@@ -40,7 +40,15 @@
     }
     CGContextClip(context);
     
-    CGContextDrawImage(context, CGRectMake(0, 0, self.bounds.size.width, self.bounds.size.height), cached);
+    CGFloat scale1 = image.size.width/self.bounds.size.width;
+    CGFloat scale2 = image.size.height/self.bounds.size.height;
+    CGFloat scale = scale1>scale2?scale1:scale2;
+    CGRect bounds = CGRectZero;
+    
+    bounds.size.width = image.size.width/scale;
+    bounds.size.height = image.size.height/scale;
+    
+    CGContextDrawImage(context, bounds, cached);
 }
 
 @end
