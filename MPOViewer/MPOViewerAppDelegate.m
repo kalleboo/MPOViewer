@@ -22,11 +22,17 @@
                            pathForResource:@"test" ofType:@"mpo"];
     NSImage* test = [[NSImage alloc] initWithContentsOfFile:imageName];
 
-    view1.image = test;
+    [self loadImage:test];
+}
+
+-(void)loadImage:(NSImage*)img {
+    view1.image = img;
     view1.offset = 0;
+    [view1 clearCache];
     
-    view2.image = test;
+    view2.image = img;
     view2.offset = 1;
+    [view2 clearCache];
     
     [view1 setNeedsDisplay:YES];
     [view2 setNeedsDisplay:YES];

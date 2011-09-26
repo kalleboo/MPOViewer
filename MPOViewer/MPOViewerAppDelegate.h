@@ -19,4 +19,6 @@
 @property (nonatomic,retain) IBOutlet MPOView* view1;
 @property (nonatomic,retain) IBOutlet MPOView* view2;
 
+-(void)loadImage:(NSImage*)img;
+
 @end

@@ -7,10 +7,12 @@
 //
 
 #import "MPOView.h"
+#import "MPOViewerAppDelegate.h"
 
 @implementation MPOView
 @synthesize image;
 @synthesize offset;
+@synthesize cached;
 
 - (void)drawRect:(NSRect)dirtyRect
 {
@@ -49,6 +51,71 @@
     bounds.size.height = image.size.height/scale;
     
     CGContextDrawImage(context, bounds, cached);
+}
+
+-(void)clearCache {
+    if (!cached)
+        return;
+    
+    CGImageRelease(cached);
+    cached = nil;
+}
+
+#pragma mark drop
+
+- (id)initWithFrame:(NSRect)frame
+{
+    self = [super initWithFrame:frame];
+    
+    if (self) {
+        [self registerForDraggedTypes:[NSArray arrayWithObjects:NSFilenamesPboardType,nil]];
+    }
+    
+    return self;
+}
+
+- (NSDragOperation)draggingEntered:(id <NSDraggingInfo>)sender
+{
+    if ((NSDragOperationGeneric & [sender draggingSourceOperationMask]) == NSDragOperationGeneric) {
+        return NSDragOperationCopy;
+    } else {
+        return NSDragOperationNone;
+    }
+}
+
+- (BOOL)prepareForDragOperation:(id <NSDraggingInfo>)sender {
+    return YES;
+}
+
+- (BOOL)performDragOperation:(id <NSDraggingInfo>)sender
+{
+    MPOViewerAppDelegate* appDelegate = (MPOViewerAppDelegate*)[[NSApplication sharedApplication] delegate]; 
+    NSPasteboard *paste = [sender draggingPasteboard];
+	//gets the dragging-specific pasteboard from the sender
+    NSArray *types = [NSArray arrayWithObjects:NSFilenamesPboardType, nil];
+	//a list of types that we can accept
+    NSString *desiredType = [paste availableTypeFromArray:types];
+    NSData *carriedData = [paste dataForType:desiredType];
+	
+    if (nil == carriedData) {
+        return NO;
+    } else {
+        if ([desiredType isEqualToString:NSFilenamesPboardType]) {
+            NSArray *fileArray = [paste propertyListForType:@"NSFilenamesPboardType"];
+            NSString *path = [fileArray objectAtIndex:0];
+            NSImage *newImage = [[NSImage alloc] initWithContentsOfFile:path];
+			
+            if (nil == newImage) {
+				NSBeep();
+                return NO;
+            } else {
+                [appDelegate loadImage:newImage];
+				[newImage release];
+            }
+        }
+    }
+    
+    return YES;
 }
 
 @end

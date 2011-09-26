@@ -15,8 +15,10 @@
     CGImageRef cached;
 }
 
-@property (nonatomic,assign) NSImage* image;
+@property (nonatomic,retain) NSImage* image;
 @property (nonatomic,assign) CGImageRef cached;
 @property (nonatomic,assign) int offset;
+
+-(void)clearCache;
 
 @end
