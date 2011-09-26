@@ -15,6 +15,7 @@
 		12AE2B4414301E6B0028F001 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 12AE2B4214301E6B0028F001 /* MainMenu.xib */; };
 		12AE2B4E14301EE00028F001 /* MPOView.m in Sources */ = {isa = PBXBuildFile; fileRef = 12AE2B4D14301EE00028F001 /* MPOView.m */; };
 		12AE2B5014301EF50028F001 /* test.mpo in Resources */ = {isa = PBXBuildFile; fileRef = 12AE2B4F14301EF50028F001 /* test.mpo */; };
+		12AE2B751430C91D0028F001 /* MyScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 12AE2B741430C91D0028F001 /* MyScrollView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,8 @@
 		12AE2B4C14301EE00028F001 /* MPOView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPOView.h; sourceTree = "<group>"; };
 		12AE2B4D14301EE00028F001 /* MPOView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPOView.m; sourceTree = "<group>"; };
 		12AE2B4F14301EF50028F001 /* test.mpo */ = {isa = PBXFileReference; lastKnownFileType = file; path = test.mpo; sourceTree = "<group>"; };
+		12AE2B731430C91D0028F001 /* MyScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyScrollView.h; sourceTree = "<group>"; };
+		12AE2B741430C91D0028F001 /* MyScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyScrollView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +96,8 @@
 				12AE2B3414301E6A0028F001 /* Supporting Files */,
 				12AE2B4C14301EE00028F001 /* MPOView.h */,
 				12AE2B4D14301EE00028F001 /* MPOView.m */,
+				12AE2B731430C91D0028F001 /* MyScrollView.h */,
+				12AE2B741430C91D0028F001 /* MyScrollView.m */,
 			);
 			path = MPOViewer;
 			sourceTree = "<group>";
@@ -174,6 +179,7 @@
 				12AE2B3A14301E6B0028F001 /* main.m in Sources */,
 				12AE2B4114301E6B0028F001 /* MPOViewerAppDelegate.m in Sources */,
 				12AE2B4E14301EE00028F001 /* MPOView.m in Sources */,
+				12AE2B751430C91D0028F001 /* MyScrollView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,6 +299,7 @@
 				12AE2B4914301E6B0028F001 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

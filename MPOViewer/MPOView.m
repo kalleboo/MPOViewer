@@ -29,6 +29,7 @@
         cached = CGBitmapContextCreateImage(context2);
         
         CGColorSpaceRelease(colorSpace);
+        CGContextRelease(context2);
     }
     
     CGContextRef context = (CGContextRef)[[NSGraphicsContext currentContext] graphicsPort];
@@ -49,6 +50,9 @@
     
     bounds.size.width = image.size.width/scale;
     bounds.size.height = image.size.height/scale;
+    
+    bounds.origin.x = self.bounds.size.width/2-(bounds.size.width/2);
+    bounds.origin.y = self.bounds.size.height/2-(bounds.size.height/2);
     
     CGContextDrawImage(context, bounds, cached);
 }
@@ -109,7 +113,7 @@
 				NSBeep();
                 return NO;
             } else {
-                [appDelegate loadImage:newImage];
+                [appDelegate loadImage:newImage withTitle:[path lastPathComponent]];
 				[newImage release];
             }
         }

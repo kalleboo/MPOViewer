@@ -10,9 +10,13 @@
 
 @implementation MPOViewerAppDelegate
 
-@synthesize window;
+@synthesize imageWindow;
+@synthesize listWindow;
 @synthesize view1;
 @synthesize view2;
+@synthesize fileList;
+@synthesize fileListTable;
+@synthesize fileListScrollView;
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
@@ -20,12 +24,23 @@
     
     NSString* imageName = [[NSBundle mainBundle]
                            pathForResource:@"test" ofType:@"mpo"];
-    NSImage* test = [[NSImage alloc] initWithContentsOfFile:imageName];
+    NSImage* test = [[[NSImage alloc] initWithContentsOfFile:imageName] autorelease];
 
-    [self loadImage:test];
+    [self loadImage:test withTitle:@"MPOViewer"];
+    
+    self.fileList = [NSMutableArray array];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(rowSelected:) name:NSTableViewSelectionDidChangeNotification object:fileListTable];
+    
+	[fileListScrollView registerForDraggedTypes:[NSArray arrayWithObjects: NSFilenamesPboardType, nil]];
+    
+    [imageWindow makeKeyAndOrderFront:nil];
+    [listWindow makeKeyAndOrderFront:nil];
 }
 
--(void)loadImage:(NSImage*)img {
+-(void)loadImage:(NSImage*)img withTitle:(NSString*)title{
+    imageWindow.title = title;
+    
     view1.image = img;
     view1.offset = 0;
     [view1 clearCache];
@@ -37,5 +52,75 @@
     [view1 setNeedsDisplay:YES];
     [view2 setNeedsDisplay:YES];
 }
+
+
+#pragma mark tableView
+
+- (int)numberOfRowsInTableView:(NSTableView *)tableView {
+	return [fileList count];
+}
+- (id)tableView:(NSTableView *)tableView objectValueForTableColumn:(NSTableColumn *)tableColumn row:(int)row {
+	if (row != -1) {
+//        NSLog("%@",[[fileList objectAtIndex:row] lastPathComponent]);
+		return [[fileList objectAtIndex:row] lastPathComponent];
+	}
+    
+	return nil;
+}
+
+- (BOOL)tableView:(NSTableView *)aTableView shouldSelectRow:(NSInteger)rowIndex {
+	return YES;
+}
+
+- (void)rowSelected:(NSNotification *)aNotification
+{
+    NSInteger row = [fileListTable selectedRow];
+	if (row >= 0) {
+        NSString* filename = [fileList objectAtIndex:row];
+		[self loadImage:[[[NSImage alloc] initWithContentsOfFile:filename] autorelease] withTitle:[filename lastPathComponent]];
+    }
+}
+
+
+
+#pragma mark dragndrop
+
+- (NSDragOperation)draggingEntered:(id <NSDraggingInfo>)sender
+{
+    if ((NSDragOperationGeneric & [sender draggingSourceOperationMask]) == NSDragOperationGeneric) {
+        return NSDragOperationCopy;
+    } else {
+        return NSDragOperationNone;
+    }
+}
+
+- (BOOL)prepareForDragOperation:(id <NSDraggingInfo>)sender {
+    return YES;
+}
+
+- (BOOL)performDragOperation:(id <NSDraggingInfo>)sender
+{
+    NSLog(@"dropped");
+    NSPasteboard *paste = [sender draggingPasteboard];
+	//gets the dragging-specific pasteboard from the sender
+    NSArray *types = [NSArray arrayWithObjects:NSFilenamesPboardType, nil];
+	//a list of types that we can accept
+    NSString *desiredType = [paste availableTypeFromArray:types];
+    NSData *carriedData = [paste dataForType:desiredType];
+	
+    if (nil == carriedData) {
+        return NO;
+    } else {
+        if ([desiredType isEqualToString:NSFilenamesPboardType]) {
+            for (NSString* path in [paste propertyListForType:@"NSFilenamesPboardType"]) {
+                [fileList addObject:path];
+                [fileListTable reloadData];
+            }
+        }
+    }
+    
+    return YES;
+}
+
 
 @end

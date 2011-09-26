@@ -8,17 +8,30 @@
 
 #import <Cocoa/Cocoa.h>
 #import "MPOView.h"
+#import "MyScrollView.h"
 
 @interface MPOViewerAppDelegate : NSObject <NSApplicationDelegate> {
-    NSWindow *window;
+    NSWindow *imageWindow;
+    NSWindow *listWindow;
     MPOView* view1;
     MPOView* view2;
+    NSMutableArray* fileList;
+    NSTableView* fileListTable;
+    MyScrollView* fileListScrollView;
 }
 
-@property (assign) IBOutlet NSWindow *window;
+@property (assign) IBOutlet NSWindow *imageWindow;
+@property (assign) IBOutlet NSWindow *listWindow;
 @property (nonatomic,retain) IBOutlet MPOView* view1;
 @property (nonatomic,retain) IBOutlet MPOView* view2;
+@property (nonatomic,retain) NSMutableArray* fileList;
+@property (nonatomic,retain) IBOutlet NSTableView* fileListTable;
+@property (nonatomic,retain) IBOutlet MyScrollView* fileListScrollView;;
 
--(void)loadImage:(NSImage*)img;
+-(void)loadImage:(NSImage*)img withTitle:(NSString*)title;
+
+- (NSDragOperation)draggingEntered:(id <NSDraggingInfo>)sender;
+- (BOOL)prepareForDragOperation:(id <NSDraggingInfo>)sender;
+- (BOOL)performDragOperation:(id <NSDraggingInfo>)sender;
 
 @end
