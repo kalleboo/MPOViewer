@@ -12,10 +12,11 @@
 {
     NSImage* image;
     int offset;
+    CGImageRef cached;
 }
 
-@property (nonatomic,retain) NSImage* image;
+@property (nonatomic,assign) NSImage* image;
+@property (nonatomic,assign) CGImageRef cached;
 @property (nonatomic,assign) int offset;
 
-- (id)initWithFrame:(NSRect)frame image:(NSImage*)image offset:(int)offset;
 @end
