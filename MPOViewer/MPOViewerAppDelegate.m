@@ -107,6 +107,7 @@
 
 -(IBAction)changedStyleSelect:(id)sender {
     NSLog(@"changedStyleSelect");
+    NSBeep();
 }
 
 -(IBAction)changedEffectSlider:(id)sender {
