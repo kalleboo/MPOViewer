@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		125F110B14334E3200A29C2F /* README.textile in Resources */ = {isa = PBXBuildFile; fileRef = 125F110A14334E3200A29C2F /* README.textile */; };
 		12AE2B2E14301E6A0028F001 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12AE2B2D14301E6A0028F001 /* Cocoa.framework */; };
 		12AE2B3814301E6A0028F001 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 12AE2B3614301E6A0028F001 /* InfoPlist.strings */; };
 		12AE2B3A14301E6B0028F001 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 12AE2B3914301E6B0028F001 /* main.m */; };
@@ -20,7 +19,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		125F110A14334E3200A29C2F /* README.textile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.textile; sourceTree = "<group>"; };
 		12AE2B2914301E6A0028F001 /* MPOViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MPOViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		12AE2B2D14301E6A0028F001 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		12AE2B3014301E6A0028F001 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -100,7 +98,6 @@
 				12AE2B4D14301EE00028F001 /* MPOView.m */,
 				12AE2B731430C91D0028F001 /* MyScrollView.h */,
 				12AE2B741430C91D0028F001 /* MyScrollView.m */,
-				125F110A14334E3200A29C2F /* README.textile */,
 			);
 			path = MPOViewer;
 			sourceTree = "<group>";
@@ -169,7 +166,6 @@
 				12AE2B3E14301E6B0028F001 /* Credits.rtf in Resources */,
 				12AE2B4414301E6B0028F001 /* MainMenu.xib in Resources */,
 				12AE2B5014301EF50028F001 /* test.mpo in Resources */,
-				125F110B14334E3200A29C2F /* README.textile in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
