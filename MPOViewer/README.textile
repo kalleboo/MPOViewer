@@ -1,0 +1,21 @@
+h1. MPOViewer README
+
+h2. tl;dr
+
+MPOViewer is a quick and dirty Mac OS X Cocoa app to browse stereoscopic MPO photos on an interlaced 3D display
+
+h2. Why did you make this
+
+I bought a cell phone with a 3D screen/camera (Sharp SH-12C) and a 3D Monitor (Mitsubishi Diamondcrysta RDT233WX-3D) and I wanted to browse through the photos in 3D on my TV. There are a bunch of other apps out there, but they either have too annoying UI's (have to open each image individually and can't just page through them), or they cost money, or something else. So I whipped together this.
+
+h2. What does it do
+* Open MPO files
+* Show the two stereoscopic images interlaced into each other. This works with my monitor (passive glasses). It probably doesn't on yours (active glasses).
+* Let you drag a bunch of them into a "playlist" to quickly arrow-key though
+* Let you adjust the eye offset using a slider
+* Full screen mode
+
+h2. What does it not do, but I plan to add at some point (especially if you bug me about it)
+* Side-by-side mode to work on more types of monitors (and to enable more features of my own)
+* Save settings
+* Show thumbnails in the files list
