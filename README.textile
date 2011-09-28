@@ -4,7 +4,7 @@ h2. tl;dr
 
 MPOViewer is a quick and dirty Mac OS X Cocoa app to browse stereoscopic MPO photos on an interlaced 3D display
 
-!screenshot.jpg!
+!https://github.com/kalleboo/MPOViewer/raw/master/screenshot.jpg!
 
 h2. Why did you make this
 
