@@ -22,6 +22,7 @@
     NSSegmentedControl* effectStyleSelect;
     NSSlider* effectSlider;
     NSMenu* screensMenu;
+    NSNumber* sliderAmt;
 }
 
 @property (assign) IBOutlet NSWindow *imageWindow;
@@ -35,6 +36,7 @@
 @property (nonatomic,retain) IBOutlet NSSegmentedControl* effectStyleSelect;
 @property (nonatomic,retain) IBOutlet NSSlider* effectSlider;
 @property (nonatomic,retain) IBOutlet NSMenu* screensMenu;
+@property (nonatomic,assign) IBOutlet NSNumber* sliderAmt;
 
 -(void)loadImage:(NSImage*)img withTitle:(NSString*)title;
 
