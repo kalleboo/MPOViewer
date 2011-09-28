@@ -18,6 +18,10 @@
     NSMutableArray* fileList;
     NSTableView* fileListTable;
     MyScrollView* fileListScrollView;
+    NSPopUpButton* fullscreenPopup;
+    NSSegmentedControl* effectStyleSelect;
+    NSSlider* effectSlider;
+    NSMenu* screensMenu;
 }
 
 @property (assign) IBOutlet NSWindow *imageWindow;
@@ -27,11 +31,19 @@
 @property (nonatomic,retain) NSMutableArray* fileList;
 @property (nonatomic,retain) IBOutlet NSTableView* fileListTable;
 @property (nonatomic,retain) IBOutlet MyScrollView* fileListScrollView;;
+@property (nonatomic,retain) IBOutlet NSPopUpButton* fullscreenPopup;
+@property (nonatomic,retain) IBOutlet NSSegmentedControl* effectStyleSelect;
+@property (nonatomic,retain) IBOutlet NSSlider* effectSlider;
+@property (nonatomic,retain) IBOutlet NSMenu* screensMenu;
 
 -(void)loadImage:(NSImage*)img withTitle:(NSString*)title;
 
 - (NSDragOperation)draggingEntered:(id <NSDraggingInfo>)sender;
 - (BOOL)prepareForDragOperation:(id <NSDraggingInfo>)sender;
 - (BOOL)performDragOperation:(id <NSDraggingInfo>)sender;
+
+-(IBAction)changedFullscreenPopup:(id)sender;
+-(IBAction)changedStyleSelect:(id)sender;
+-(IBAction)changedEffectSlider:(id)sender;
 
 @end

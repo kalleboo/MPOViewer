@@ -17,11 +17,13 @@
 @synthesize fileList;
 @synthesize fileListTable;
 @synthesize fileListScrollView;
+@synthesize fullscreenPopup;
+@synthesize effectStyleSelect;
+@synthesize effectSlider;
+@synthesize screensMenu;
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-    // Insert code here to initialize your application
-    
     NSString* imageName = [[NSBundle mainBundle]
                            pathForResource:@"test" ofType:@"mpo"];
     NSImage* test = [[[NSImage alloc] initWithContentsOfFile:imageName] autorelease];
@@ -36,6 +38,19 @@
     
     [imageWindow makeKeyAndOrderFront:nil];
     [listWindow makeKeyAndOrderFront:nil];
+    
+    self.screensMenu = fullscreenPopup.menu;
+    [screensMenu removeAllItems];
+    int i = 1;
+    for (NSScreen* screen in [NSScreen screens]) {
+        NSRect frame = [screen frame];
+        NSMenuItem* item = [[NSMenuItem alloc] initWithTitle:[NSString stringWithFormat:@"%d: %1.0f x %1.0f",i++,frame.size.width,frame.size.height] action:@selector(changedFullscreenPopup:) keyEquivalent:@""];
+        [screensMenu addItem:item];
+        item.tag = i-1;
+        [item release];
+    }
+    fullscreenPopup.menu = screensMenu;
+    [screensMenu release];
 }
 
 -(void)loadImage:(NSImage*)img withTitle:(NSString*)title{
@@ -81,6 +96,21 @@
     }
 }
 
+#pragma mark toolbar
+
+-(IBAction)changedFullscreenPopup:(id)sender {
+    NSMenuItem* menu = (NSMenuItem*)sender;
+    [imageWindow setStyleMask:NSBorderlessWindowMask];
+    [imageWindow setFrame:((NSScreen*)[[NSScreen screens] objectAtIndex:menu.tag-1]).frame display:YES animate:YES];
+}
+
+-(IBAction)changedStyleSelect:(id)sender {
+    NSLog(@"changedStyleSelect");
+}
+
+-(IBAction)changedEffectSlider:(id)sender {
+    NSLog(@"changedEffectSlider");
+}
 
 
 #pragma mark dragndrop
