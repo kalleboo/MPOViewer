@@ -110,8 +110,6 @@
 }
 
 -(IBAction)changedEffectSlider:(id)sender {
-    NSSlider* slider = (NSSlider*)sender;
-    NSLog(@"changedEffectSlider");
     view1.frame = NSMakeRect(-[sliderAmt floatValue], 0, view1.frame.size.width, view1.frame.size.height);
     view2.frame = NSMakeRect([sliderAmt floatValue], 0, view1.frame.size.width, view1.frame.size.height);
 }
